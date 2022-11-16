@@ -58,3 +58,28 @@
 这一部分，实际就是讲了一下训练过程，先抛出来损失函数公式，训练集用的是啥（正例和负例），以及其分别是啥。提到了极大似然法，随机梯度下降等等。私以为，有点类似于BP神经网络算法。作者说这个方法就是 loss log，算是loss log。let me 搜搜啥是 loss log。
 
 好了，搜到了，就是对数损失函数，南瓜书学过了，和交叉熵的那个等价的东西。终于知道了，论文中写到的 probabilistic treatment是啥玩意了，原来就是这东西。
+
+## 3.2 Generalized Matrix Factorization (GMF)
+
+在这一小节，作者设计了一个公式，能够将NCF融入进MF框架里，这也称之为广义MF。具体见下面这个图，通过对h和a进行特定的赋值（分别是单位向量和等值函数），就可以将这玩意退化为MF。相当于是凑了个推广形式？Maybe~
+
+
+![image.png](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ca9d7f804bda4dda95cc1f89d019775c~tplv-k3u1fbpfcp-watermark.image?)
+
+## 3.3 MLP
+
+顾名思义，这部分就讲了多层感知机以及其参数。先说MF的向量内积形式忽视了很多交互信息啥的，所以多层感知机非常好。
+
+然后用公式刻划了一下，也比较好理解。讲了W、b、a分别的含义，然后分析了三种激活函数的优缺点和适用性，最后选择了ReLU。然后根据经验设计双塔模型，和层数等等。
+
+
+![image.png](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c5976fd6388640598edcc9b2e20c4402~tplv-k3u1fbpfcp-watermark.image?)
+
+## 3.4 Fusion
+
+融合一下。这一部分就讲了MLP和GMF如何统一起来。是合并还是分开。讨论了优缺点，最后采用分开的形式，用最后的隐藏层进行串联。
+
+下面这个图就是形式化的公式，然后参数们都可以通过算偏导反向传播进行计算。
+
+![image.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4bb48517de3542ae9f0f4fd2d8fc1532~tplv-k3u1fbpfcp-watermark.image?)
+
