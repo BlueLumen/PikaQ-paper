@@ -2,6 +2,8 @@
 
 不采用那种每段的了。效率比较低，直接看一遍，脑袋里面剩下啥就是啥。
 
+实验部分没看，因为队长也没看。现在的主要目的是，明白总体原理和整体逻辑即可，实验部分对我可能意义不大，就算有那也无所谓了，毕竟我就是没看。
+
 参考引用：
 1. latent features：https://www.zhihu.com/question/306016801?sort=created<br/>
 2. latent features：[machine learning - Meaning of latent features? - Data Science Stack Exchange](https://datascience.stackexchange.com/questions/749/meaning-of-latent-features)
